@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAGMART LUXURIES | Shop For Everything</title>
+
+<!-- PWA - APP INSTALLABLE -->
+<link rel="manifest" href='data:application/json;base64,eyJuYW1lIjoiSkFHTUFSVCBMVVhVUkllUyIsInNob3J0X25hbWUiOiJKQUdNQVJUIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBhMGEwYSIsInRoZW1lX2NvbG9yIjoiI2Q0YWYzNyIsImljb25zIjpbXX0='>
+<meta name="theme-color" content="#d4af37">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="JAGMART">
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/10874/10874933.png">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:system-ui,sans-serif}
+.header{background:#111;border-bottom:2px solid #d4af37;padding:15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99}
+.logo{font-weight:900;font-size:22px;color:#d4af37}.logo span{color:#fff}
+.cart{background:#d4af37;color:#000;padding:8px 18px;border-radius:20px;font-weight:700;border:none}
+.hero{padding:40px 20px;text-align:center;background:radial-gradient(circle at center,#2a2110,#0a0a0a)}
+.hero h1{font-size:32px;color:#d4af37}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px}
+.card{background:#181818;border:1px solid #222;border-radius:16px;padding:12px;text-align:center}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:12px}
+.price{color:#d4af37;font-weight:800;margin:5px}
+.btn{width:100%;background:#d4af37;color:#000;border:none;padding:10px;border-radius:10px;font-weight:700;margin-top:5px}
+.pay-section{background:#111;margin:20px;border:2px solid #d4af37;border-radius:18px;padding:20px}
+.pay-btn{width:100%;padding:14px;border-radius:12px;border:none;font-weight:900;margin-bottom:10px}
+.paystack{background:#00C3F7;color:#fff}.stripe{background:#635bff;color:#fff}.chase{background:#0a4a8a;color:#fff;border:1px solid #fff}
+</style>
+</head>
+<body>
+
+<div class="header"><div class="logo">JM <span>JAGMART</span></div><button class="cart">🛒 <span id="cartCount">0</span></button></div>
+<div class="hero"><h1>SHOP FOR EVERYTHING</h1><p>Luxury Mall • Chat • Movies • Football • Games</p></div>
+<div class="grid" id="productGrid"></div>
+
+<div class="pay-section">
+<h2 style="text-align:center;color:#d4af37">💳 SECURE CHECKOUT</h2>
+<p style="text-align:center;margin:10px">Total: <b id="totalPrice" style="color:#d4af37;font-size:20px">$0</b></p>
+<button class="pay-btn paystack" onclick="payWithPaystack()">Pay with Paystack (Nigeria)</button>
+<button class="pay-btn stripe" onclick="payWithStripe()">Pay with Stripe (USA Chase)</button>
+<button class="pay-btn chase" onclick="payWithChaseLink()">Pay via Zelle / Chase</button>
+<p style="font-size:11px;color:#888;text-align:center;margin-top:10px">Replace YOUR_KEYS below with your real keys</p>
+</div>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+const products=[
+{name:"Luxury Drip Wear",price:45,img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400"},
+{name:"Designer Shoes",price:85,img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"},
+{name:"Gold Chain",price:120,img:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400"},
+{name:"Premium Watch",price:199,img:"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400"},
+];
+let cartTotal=0,cartItems=0;
+const grid=document.getElementById('productGrid');
+products.forEach(p=>{grid.innerHTML+=`<div class="card"><img src="${p.img}"><h3>${p.name}</h3><div class="price">$${p.price}</div><button class="btn" onclick="addToCart(${p.price})">Add to Cart</button></div>`});
+function addToCart(price){cartTotal+=price;cartItems++;document.getElementById('cartCount').innerText=cartItems;document.getElementById('totalPrice').innerText='$'+cartTotal;alert('Added! Total $'+cartTotal);}
+
+// === PASTE YOUR KEYS HERE ===
+const PAYSTACK_PUBLIC_KEY = "pk_live_YOUR_PAYSTACK_KEY_HERE"; 
+const STRIPE_PUBLIC_KEY = "pk_live_YOUR_STRIPE_KEY_HERE";
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/YOUR_LINK_HERE";
+
+function payWithPaystack(){
+if(PAYSTACK_PUBLIC_KEY.includes('YOUR_PAYSTACK')){alert('⚠️ Paste your Paystack Public Key first! Paystack app > Settings > API Keys');return;}
+if(cartTotal==0){alert('Add product first');return;}
+let handler=PaystackPop.setup({key:PAYSTACK_PUBLIC_KEY,email:"customer@jagmart.com",amount:cartTotal*100,currency:"NGN",callback:function(res){alert('✅ Success Ref: '+res.reference);},onClose:function(){alert('Closed');}});handler.openIframe();
+}
+function payWithStripe(){
+if(STRIPE_PAYMENT_LINK.includes('YOUR_LINK')){alert('Create Payment Link in Stripe Dashboard first');window.open('https://dashboard.stripe.com/payment-links','_blank');return;}
+window.location.href=STRIPE_PAYMENT_LINK;
+}
+function payWithChaseLink(){alert('Send $'+cartTotal+' via Zelle to your Chase');window.open('https://www.zellepay.com/','_blank');}
+
+// PWA Install
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('data:text/javascript;base64,'+btoa(`self.addEventListener('install',e=>{self.skipWaiting();});`));
+}
+</script>
+</body>
+</html>

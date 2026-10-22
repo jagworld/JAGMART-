@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAGMART LUXURIES - Shop For Everything</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--gold:#d4af37;--gold2:#8a6d00;--dark:#0f0f0f;--card:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Arial;background:var(--dark);color:#fff}
+header{background:linear-gradient(90deg,var(--gold),var(--gold2));padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:45px;height:45px;background:#000;color:var(--gold);display:grid;place-items:center;border-radius:12px;font-weight:900;font-size:22px;border:2px solid #fff}
+.logo h1{margin:0;font-size:22px;color:#000;letter-spacing:1px;line-height:1}
+.logo span{font-size:11px;color:#222;display:block}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a{color:#000;text-decoration:none;font-weight:700;background:#fff;padding:7px 12px;border-radius:20px;font-size:13px}
+.hero{text-align:center;padding:60px 20px;background:radial-gradient(circle at top,#2a2a2a,var(--dark))}
+.hero h2{font-size:42px;margin:0;color:var(--gold)}
+.hero p{color:#bbb;max-width:800px;margin:12px auto;line-height:1.6}
+.btn-main{padding:14px 28px;border:none;background:var(--gold);color:#000;font-weight:800;border-radius:30px;cursor:pointer;margin:8px}
+.pay-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.pay-bar span{background:#1e1e1e;border:1px solid #333;padding:6px 14px;border-radius:20px;font-size:12px}
+.section-title{padding:30px 20px 0 20px;color:var(--gold);font-size:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px}
+.card{background:var(--card);border:1px solid #333;border-radius:18px;padding:22px;transition:0.3s}
+.card:hover{border-color:var(--gold);transform:translateY(-5px)}
+.card h3{color:var(--gold);margin:0 0 8px 0}
+.card p{color:#aaa;font-size:14px;line-height:1.6}
+.card ul{color:#bbb;font-size:13px;padding-left:18px}
+.btn{display:inline-block;margin-top:10px;background:var(--gold);color:#000;padding:9px 16px;border-radius:20px;text-decoration:none;font-weight:700;font-size:13px;margin-right:6px}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.payment-box{background:linear-gradient(135deg,#1a1a1a,#222);border:2px solid var(--gold);border-radius:18px;padding:25px;margin:20px}
+.live-badge{background:red;color:#fff;padding:4px 10px;border-radius:20px;font-size:11px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0.5}}
+footer{text-align:center;padding:30px;background:#000;color:#777;font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">
+<div class="logo-icon">JM</div>
+<h1>JAGMART LUXURIES <span>SHOP FOR EVERYTHING - PH | LAGOS | USA</span></h1>
+</div>
+<nav>
+<a href="#"><i class="fa-solid fa-store"></i> Mall</a>
+<a href="#"><i class="fa-solid fa-podcast"></i> Live</a>
+<a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>JAGMART LUXURIES MALL</h2>
+<p>Luxury Fashion • Shoes • Gadgets • Real Estate • Movies • Football • Learning • Games • Podcasts • Card Trading • Go Live. One Shop For Everything.</p>
+<button class="btn-main" onclick="alert('Welcome to JAGMART Luxury Mall!')">Enter Mall <i class="fa-solid fa-arrow-right"></i></button>
+<div class="pay-bar">
+<span><i class="fa-solid fa-naira-sign"></i> Paystack NGN</span>
+<span>Flutterwave</span>
+<span>OPAY / Palmpay</span>
+<span><i class="fa-brands fa-cc-visa"></i> Chase Card USA</span>
+<span><i class="fa-brands fa-cc-stripe"></i> Stripe</span>
+<span><i class="fa-brands fa-paypal"></i> PayPal USA</span>
+</div>
+</section>
+
+<h2 class="section-title">SHOP LUXURY DEPARTMENTS</h2>
+<div class="grid">
+
+<div class="card">
+<h3><i class="fa-solid fa-shirt"></i> Designer Wears</h3>
+<p>All kinds of luxury wears for Men, Women, Kids - All Sizes XS to 6XL.</p>
+<ul>
+<li>Creative Wears - Street Luxury, Urban Drip</li>
+<li>Corporate Wears - Suits, Shirts, Office Gowns</li>
+<li>Native Wears - Agbada, Senator, Kaftan</li>
+<li>Traditional - Igbo, Yoruba, Hausa Attires</li>
+</ul>
+<a href="#" class="btn">Shop Wears</a>
+<a href="#" class="btn btn-outline">Size Chart</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-shoe-prints"></i> Shoes & Sneakers</h3>
+<p>Original luxury footwear - All sizes, all brands.</p>
+<ul>
+<li>Sneakers - Nike, Adidas, Balenciaga, Jordan</li>
+<li>Corporate Shoes - Oxford, Loafers, Brogues</li>
+<li>Native Slippers - Handmade Luxury</li>
+<li>Boots, Sandals, Heels, Kids Sizes</li>
+</ul>
+<a href="#" class="btn">Shop Shoes</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-mobile-screen"></i> Gadgets & Accessories</h3>
+<p>iPhone, Samsung, Laptops, PS5, Starlink, Luxury Watches, Chains, Bags, Perfumes.</p>
+<ul>
+<li>Phones & Laptops - iPhone 15 Pro Max, MacBook</li>
+<li>Accessories - AirPods, Powerbanks, Chargers</li>
+<li>Luxury - Watches, Gold Chains, Designer Bags</li>
+</ul>
+<a href="#" class="btn">Shop Gadgets</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-house-chimney"></i> Real Estate</h3>
+<p>Buy land, rent house, shortlet, luxury apartments in PH, Lagos, Abuja, USA.</p>
+<ul>
+<li>Land for Sale - GRA, Peter Odili, Lekki</li>
+<li>Houses for Rent & Sale</li>
+<li>Shortlet Apartments - Daily/Weekly</li>
+</ul>
+<a href="#" class="btn">View Properties</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-podcast"></i> Podcasts & Shows <span class="live-badge">LIVE</span></h3>
+<p>JAGMART Studio - Luxury Talks, Business, Relationship, Comedy, News.</p>
+<ul>
+<li>Daily Podcast Shows - Watch/Listen</li>
+<li>Invite Guests, Sponsor Shows</li>
+<li>Record in JAGMART Studio PH</li>
+</ul>
+<a href="#" class="btn">Listen Now</a>
+<a href="#" class="btn btn-outline">Start Podcast</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-video"></i> Go Live Streaming</h3>
+<p>Go Live! Sell your market live like TikTok Shop. Chat, show product, collect payment live.</p>
+<ul>
+<li>Live Sales - Fashion, Gadgets, Food</li>
+<li>Live Football - Watch EPL, Champions League</li>
+<li>Live Learning Classes</li>
+<li>Gifters & Super Chats</li>
+</ul>
+<a href="#" class="btn">Go Live Now</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-credit-card"></i> Card Trading</h3>
+<p>Best Rates - Instant Payment. No scam.</p>
+<ul>
+<li>Gift Cards - Amazon, Apple, Steam, Google, eBay</li>
+<li>Crypto Cards - Virtual Dollar Cards</li>
+<li>Swap Gift Card to Naira or USDT</li>
+<li>USA Chase / US Bank Cards Supported</li>
+</ul>
+<a href="#" class="btn">Trade Cards</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-film"></i> Watch A Movie + Chat + Games + Learn</h3>
+<p>Everything else in luxury.</p>
+<ul>
+<li>Chat With Friends - Luxury Lounge</li>
+<li>Watch Movies - JAG Cinema 4K</li>
+<li>Football - Live Scores & Jersey Shop</li>
+<li>Learning - JAG Academy</li>
+<li>Play Games - Tournaments & Win Cash</li>
+<li>Subscriptions - Netflix, DSTV, Spotify Prime</li>
+</ul>
+<a href="#" class="btn">Explore</a>
+</div>
+
+</div>
+
+<div class="payment-box">
+<h3 style="color:var(--gold);margin-top:0"><i class="fa-solid fa-cash-register"></i> JAGMART DUAL PAYMENT SYSTEM</h3>
+<p style="color:#bbb">Pay anyhow you want - We receive both countries instantly.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+<div style="background:#000;padding:15px;border-radius:12px">
+<strong style="color:var(--gold)">NIGERIA PAYMENTS 🇳🇬</strong><br>
+<small style="color:#aaa">Paystack, Flutterwave, Bank Transfer, OPAY, Palmpay, Roqqu USDT</small><br><br>
+<button class="btn" onclick="alert('Paystack checkout NGN')"><i class="fa-solid fa-naira-sign"></i> Pay with Paystack</button>
+<button class="btn btn-outline">Flutterwave</button>
+</div>
+<div style="background:#000;padding:15px;border-radius:12px">
+<strong style="color:var(--gold)">USA PAYMENTS 🇺🇸</strong><br>
+<small style="color:#aaa">Stripe, PayPal, Chase Debit, Zelle, Cash App, Apple Pay</small><br><br>
+<button class="btn" style="background:#635bff;color:#fff" onclick="alert('Stripe checkout USD')"><i class="fa-brands fa-cc-stripe"></i> Pay with Stripe (Chase Card OK)</button>
+<button class="btn btn-outline" style="border-color:#0070ba;color:#0070ba">PayPal</button>
+</div>
+</div>
+</div>
+
+<footer>
+<p><strong style="color:var(--gold)">JAGMART LUXURIES SHOP</strong> - Shop For Everything</p>
+<p>📍 Port Harcourt | Lagos | Abuja | Houston, TX, USA</p>
+<p>WhatsApp: +234 | Email: hello@jagmart.luxury | Live Support 24/7</p>
+<p>© 2026 JAGMART - All Rights Reserved | Secure Payments by Paystack & Stripe</p>
+</footer>
+
+<script>
+// Simple demo functions
+function addToCart(item){alert(item + ' added to JAGMART cart!')}
+</script>
+</body>
+</html><!DOCTYPE htm<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAGMART LUXURIES - Shop For Everything</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--gold:#d4af37;--gold2:#8a6d00;--dark:#0f0f0f;--card:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Arial;background:var(--dark);color:#fff}
+header{background:linear-gradient(90deg,var(--gold),var(--gold2));padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:45px;height:45px;background:#000;color:var(--gold);display:grid;place-items:center;border-radius:12px;font-weight:900;font-size:22px;border:2px solid #fff}
+.logo h1{margin:0;font-size:22px;color:#000;letter-spacing:1px;line-height:1}
+.logo span{font-size:11px;color:#222;display:block}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a{color:#000;text-decoration:none;font-weight:700;background:#fff;padding:7px 12px;border-radius:20px;font-size:13px}
+.hero{text-align:center;padding:60px 20px;background:radial-gradient(circle at top,#2a2a2a,var(--dark))}
+.hero h2{font-size:42px;margin:0;color:var(--gold)}
+.hero p{color:#bbb;max-width:800px;margin:12px auto;line-height:1.6}
+.btn-main{padding:14px 28px;border:none;background:var(--gold);color:#000;font-weight:800;border-radius:30px;cursor:pointer;margin:8px}
+.pay-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.pay-bar span{background:#1e1e1e;border:1px solid #333;padding:6px 14px;border-radius:20px;font-size:12px}
+.section-title{padding:30px 20px 0 20px;color:var(--gold);font-size:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px}
+.card{background:var(--card);border:1px solid #333;border-radius:18px;padding:22px;transition:0.3s}
+.card:hover{border-color:var(--gold);transform:translateY(-5px)}
+.card h3{color:var(--gold);margin:0 0 8px 0}
+.card p{color:#aaa;font-size:14px;line-height:1.6}
+.card ul{color:#bbb;font-size:13px;padding-left:18px}
+.btn{display:inline-block;margin-top:10px;background:var(--gold);color:#000;padding:9px 16px;border-radius:20px;text-decoration:none;font-weight:700;font-size:13px;margin-right:6px}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.payment-box{background:linear-gradient(135deg,#1a1a1a,#222);border:2px solid var(--gold);border-radius:18px;padding:25px;margin:20px}
+.live-badge{background:red;color:#fff;padding:4px 10px;border-radius:20px;font-size:11px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0.5}}
+footer{text-align:center;padding:30px;background:#000;color:#777;font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">
+<div class="logo-icon">JM</div>
+<h1>JAGMART LUXURIES <span>SHOP FOR EVERYTHING - PH | LAGOS | USA</span></h1>
+</div>
+<nav>
+<a href="#"><i class="fa-solid fa-store"></i> Mall</a>
+<a href="#"><i class="fa-solid fa-podcast"></i> Live</a>
+<a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>JAGMART LUXURIES MALL</h2>
+<p>Luxury Fashion • Shoes • Gadgets • Real Estate • Movies • Football • Learning • Games • Podcasts • Card Trading • Go Live. One Shop For Everything.</p>
+<button class="btn-main" onclick="alert('Welcome to JAGMART Luxury Mall!')">Enter Mall <i class="fa-solid fa-arrow-right"></i></button>
+<div class="pay-bar">
+<span><i class="fa-solid fa-naira-sign"></i> Paystack NGN</span>
+<span>Flutterwave</span>
+<span>OPAY / Palmpay</span>
+<span><i class="fa-brands fa-cc-visa"></i> Chase Card USA</span>
+<span><i class="fa-brands fa-cc-stripe"></i> Stripe</span>
+<span><i class="fa-brands fa-paypal"></i> PayPal USA</span>
+</div>
+</section>
+
+<h2 class="section-title">SHOP LUXURY DEPARTMENTS</h2>
+<div class="grid">
+
+<div class="card">
+<h3><i class="fa-solid fa-shirt"></i> Designer Wears</h3>
+<p>All kinds of luxury wears for Men, Women, Kids - All Sizes XS to 6XL.</p>
+<ul>
+<li>Creative Wears - Street Luxury, Urban Drip</li>
+<li>Corporate Wears - Suits, Shirts, Office Gowns</li>
+<li>Native Wears - Agbada, Senator, Kaftan</li>
+<li>Traditional - Igbo, Yoruba, Hausa Attires</li>
+</ul>
+<a href="#" class="btn">Shop Wears</a>
+<a href="#" class="btn btn-outline">Size Chart</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-shoe-prints"></i> Shoes & Sneakers</h3>
+<p>Original luxury footwear - All sizes, all brands.</p>
+<ul>
+<li>Sneakers - Nike, Adidas, Balenciaga, Jordan</li>
+<li>Corporate Shoes - Oxford, Loafers, Brogues</li>
+<li>Native Slippers - Handmade Luxury</li>
+<li>Boots, Sandals, Heels, Kids Sizes</li>
+</ul>
+<a href="#" class="btn">Shop Shoes</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-mobile-screen"></i> Gadgets & Accessories</h3>
+<p>iPhone, Samsung, Laptops, PS5, Starlink, Luxury Watches, Chains, Bags, Perfumes.</p>
+<ul>
+<li>Phones & Laptops - iPhone 15 Pro Max, MacBook</li>
+<li>Accessories - AirPods, Powerbanks, Chargers</li>
+<li>Luxury - Watches, Gold Chains, Designer Bags</li>
+</ul>
+<a href="#" class="btn">Shop Gadgets</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-house-chimney"></i> Real Estate</h3>
+<p>Buy land, rent house, shortlet, luxury apartments in PH, Lagos, Abuja, USA.</p>
+<ul>
+<li>Land for Sale - GRA, Peter Odili, Lekki</li>
+<li>Houses for Rent & Sale</li>
+<li>Shortlet Apartments - Daily/Weekly</li>
+</ul>
+<a href="#" class="btn">View Properties</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-podcast"></i> Podcasts & Shows <span class="live-badge">LIVE</span></h3>
+<p>JAGMART Studio - Luxury Talks, Business, Relationship, Comedy, News.</p>
+<ul>
+<li>Daily Podcast Shows - Watch/Listen</li>
+<li>Invite Guests, Sponsor Shows</li>
+<li>Record in JAGMART Studio PH</li>
+</ul>
+<a href="#" class="btn">Listen Now</a>
+<a href="#" class="btn btn-outline">Start Podcast</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-video"></i> Go Live Streaming</h3>
+<p>Go Live! Sell your market live like TikTok Shop. Chat, show product, collect payment live.</p>
+<ul>
+<li>Live Sales - Fashion, Gadgets, Food</li>
+<li>Live Football - Watch EPL, Champions League</li>
+<li>Live Learning Classes</li>
+<li>Gifters & Super Chats</li>
+</ul>
+<a href="#" class="btn">Go Live Now</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-credit-card"></i> Card Trading</h3>
+<p>Best Rates - Instant Payment. No scam.</p>
+<ul>
+<li>Gift Cards - Amazon, Apple, Steam, Google, eBay</li>
+<li>Crypto Cards - Virtual Dollar Cards</li>
+<li>Swap Gift Card to Naira or USDT</li>
+<li>USA Chase / US Bank Cards Supported</li>
+</ul>
+<a href="#" class="btn">Trade Cards</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-film"></i> Watch A Movie + Chat + Games + Learn</h3>
+<p>Everything else in luxury.</p>
+<ul>
+<li>Chat With Friends - Luxury Lounge</li>
+<li>Watch Movies - JAG Cinema 4K</li>
+<li>Football - Live Scores & Jersey Shop</li>
+<li>Learning - JAG Academy</li>
+<li>Play Games - Tournaments & Win Cash</li>
+<li>Subscriptions - Netflix, DSTV, Spotify Prime</li>
+</ul>
+<a href="#" class="btn">Explore</a>
+</div>
+
+</div>
+
+<div class="payment-box">
+<h3 style="color:var(--gold);margin-top:0"><i class="fa-solid fa-cash-register"></i> JAGMART DUAL PAYMENT SYSTEM</h3>
+<p style="color:#bbb">Pay anyhow you want - We receive both countries instantly.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+<div style="background:#000;padding:15px;border-radius:12px">
+<strong style="color:var(--gold)">NIGERIA PAYMENTS 🇳🇬</strong><br>
+<small style="color:#aaa">Paystack, Flutterwave, Bank Transfer, OPAY, Palmpay, Roqqu USDT</small><br><br>
+<button class="btn" onclick="alert('Paystack checkout NGN')"><i class="fa-solid fa-naira-sign"></i> Pay with Paystack</button>
+<button class="btn btn-outline">Flutterwave</button>
+</div>
+<div style="background:#000;padding:15px;border-radius:12px">
+<strong style="color:var(--gold)">USA PAYMENTS 🇺🇸</strong><br>
+<small style="color:#aaa">Stripe, PayPal, Chase Debit, Zelle, Cash App, Apple Pay</small><br><br>
+<button class="btn" style="background:#635bff;color:#fff" onclick="alert('Stripe checkout USD')"><i class="fa-brands fa-cc-stripe"></i> Pay with Stripe (Chase Card OK)</button>
+<button class="btn btn-outline" style="border-color:#0070ba;color:#0070ba">PayPal</button>
+</div>
+</div>
+</div>
+
+<footer>
+<p><strong style="color:var(--gold)">JAGMART LUXURIES SHOP</strong> - Shop For Everything</p>
+<p>📍 Port Harcourt | Lagos | Abuja | Houston, TX, USA</p>
+<p>WhatsApp: +234 | Email: hello@jagmart.luxury | Live Support 24/7</p>
+<p>© 2026 JAGMART - All Rights Reserved | Secure Payments by Paystack & Stripe</p>
+</footer>
+
+<script>
+// Simple demo functions
+function addToCart(item){alert(item + ' added to JAGMART cart!')}
+</script>
+</body>
+</html>l>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUXURIES - Shop For Everything</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--gold:#d4af37;--gold2:#8a6d00;--dark:#0f0f0f;--card:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Arial;background:var(--dark);color:#fff}
+header{background:linear-gradient(90deg,var(--gold),var(--gold2));padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:45px;height:45px;background:#000;color:var(--gold);display:grid;place-items:center;border-radius:12px;font-weight:900;font-size:22px;border:2px solid #fff}
+.logo h1{margin:0;font-size:22px;color:#000;letter-spacing:1px;line-height:1}
+.logo span{font-size:11px;color:#222;display:block}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a{color:#000;text-decoration:none;font-weight:700;background:#fff;padding:7px 12px;border-radius:20px;font-size:13px}
+.hero{text-align:center;padding:60px 20px;background:radial-gradient(circle at top,#2a2a2a,var(--dark))}
+.hero h2{font-size:42px;margin:0;color:var(--gold)}
+.hero p{color:#bbb;max-width:800px;margin:12px auto;line-height:1.6}
+.btn-main{padding:14px 28px;border:none;background:var(--gold);color:#000;font-weight:800;border-radius:30px;cursor:pointer;margin:8px}
+.pay-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.pay-bar span{background:#1e1e1e;border:1px solid #333;padding:6px 14px;border-radius:20px;font-size:12px}
+.section-title{padding:30px 20px 0 20px;color:var(--gold);font-size:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px}
+.card{background:var(--card);border:1px solid #333;border-radius:18px;padding:22px;transition:0.3s}
+.card:hover{border-color:var(--gold);transform:translateY(-5px)}
+.card h3{color:var(--gold);margin:0 0 8px 0}
+.card p{color:#aaa;font-size:14px;line-height:1.6}
+.card ul{color:#bbb;font-size:13px;padding-left:18px}
+.btn{display:inline-block;margin-top:10px;background:var(--gold);color:#000;padding:9px 16px;border-radius:20px;text-decoration:none;font-weight:700;font-size:13px;margin-right:6px}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.payment-box{background:linear-gradient(135deg,#1a1a1a,#222);border:2px solid var(--gold);border-radius:18px;padding:25px;margin:20px}
+.live-badge{background:red;color:#fff;padding:4px 10px;border-radius:20px;font-size:11px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0.5}}
+footer{text-align:center;padding:30px;background:#000;color:#777;font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">
+<div class="logo-icon">JM</div>
+<h1>LUXURIES <span>SHOP FOR EVERYTHING - PH | LAGOS | USA</span></h1>
+</div>
+<nav>
+<a href="#"><i class="fa-solid fa-store"></i> Mall</a>
+<a href="#"><i class="fa-solid fa-podcast"></i> Live</a>
+<a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>LUXURIES MALL</h2>
+<p>Luxury Fashion • Shoes • Gadgets • Real Estate • Movies • Football • Learning • Games • Podcasts • Card Trading • Go Live. One Shop For Everything.</p>
+<button class="btn-main" onclick="alert('Welcome to Luxury Mall!')">Enter Mall <i class="fa-solid fa-arrow-right"></i></button>
+<div class="pay-bar">
+<span><i class="fa-solid fa-naira-sign"></i> Paystack NGN</span>
+<span>Flutterwave</span>
+<span>OPAY / Palmpay</span>
+<span><i class="fa-brands fa-cc-visa"></i> Chase Card USA</span>
+<span><i class="fa-brands fa-cc-stripe"></i> Stripe</span>
+<span><i class="fa-brands fa-paypal"></i> PayPal USA</span>
+</div>
+</section>
+
+<h2 class="section-title">SHOP LUXURY DEPARTMENTS</h2>
+<div class="grid">
+
+<div class="card">
+<h3><i class="fa-solid fa-shirt"></i> Designer Wears</h3>
+<p>All kinds of luxury wears for Men, Women, Kids - All Sizes XS to 6XL.</p>
+<ul>
+<li>Creative Wears - Street Luxury, Urban Drip</li>
+<li>Corporate Wears - Suits, Shirts, Office Gowns</li>
+<li>Native Wears - Agbada, Senator, Kaftan</li>
+<li>Traditional - Igbo, Yoruba, Hausa Attires</li>
+</ul>
+<a href="#" class="btn">Shop Wears</a>
+<a href="#" class="btn btn-outline">Size Chart</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-shoe-prints"></i> Shoes & Sneakers</h3>
+<p>Original luxury footwear - All sizes, all brands.</p>
+<ul>
+<li>Sneakers - Nike, Adidas, Balenciaga, Jordan</li>
+<li>Corporate Shoes - Oxford, Loafers, Brogues</li>
+<li>Native Slippers - Handmade Luxury</li>
+<li>Boots, Sandals, Heels, Kids Sizes</li>
+</ul>
+<a href="#" class="btn">Shop Shoes</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-mobile-screen"></i> Gadgets & Accessories</h3>
+<p>iPhone, Samsung, Laptops, PS5, Starlink, Luxury Watches, Chains, Bags, Perfumes.</p>
+<ul>
+<li>Phones & Laptops - iPhone 15 Pro Max, MacBook</li>
+<li>Accessories - AirPods, Powerbanks, Chargers</li>
+<li>Luxury - Watches, Gold Chains, Designer Bags</li>
+</ul>
+<a href="#" class="btn">Shop Gadgets</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-house-chimney"></i> Real Estate</h3>
+<p>Buy land, rent house, shortlet, luxury apartments in PH, Lagos, Abuja, USA.</p>
+<ul>
+<li>Land for Sale - GRA, Peter Odili, Lekki</li>
+<li>Houses for Rent & Sale</li>
+<li>Shortlet Apartments - Daily/Weekly</li>
+</ul>
+<a href="#" class="btn">View Properties</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-podcast"></i> Podcasts & Shows <span class="live-badge">LIVE</span></h3>
+<p>Studio - Luxury Talks, Business, Relationship, Comedy, News.</p>
+<ul>
+<li>Daily Podcast Shows - Watch/Listen</li>
+<li>Invite Guests, Sponsor Shows</li>
+<li>Record in Studio PH</li>
+</ul>
+<a href="#" class="btn">Listen Now</a>
+<a href="#" class="btn btn-outline">Start Podcast</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-video"></i> Go Live Streaming</h3>
+<p>Go Live! Sell your market live like TikTok Shop. Chat, show product, collect payment live.</p>
+<ul>
+<li>Live Sales - Fashion, Gadgets, Food</li>
+<li>Live Football - Watch EPL, Champions League</li>
+<li>Live Learning Classes</li>
+<li>Gifters & Super Chats</li>
+</ul>
+<a href="#" class="btn">Go Live Now</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-credit-card"></i> Card Trading</h3>
+<p>Best Rates - Instant Payment. No scam.</p>
+<ul>
+<li>Gift Cards - Amazon, Apple, Steam, Google, eBay</li>
+<li>Crypto Cards - Virtual Dollar Cards</li>
+<li>Swap Gift Card to Naira or USDT</li>
+<li>USA Chase / US Bank Cards Supported</li>
+</ul>
+<a href="#" class="btn">Trade Cards</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-film"></i> Watch A Movie + Chat + Games + Learn</h3>
+<p>Everything else in luxury.</p>
+<ul>
+<li>Chat With Friends - Luxury Lounge</li>
+<li>Watch Movies - JAG Cinema 4K</li>
+<li>Football - Live Scores & Jersey Shop</li>
+<li>Learning - JAG Academy</li>
+<li>Play Games - Tournaments & Win Cash</li>
+<li>Subscriptions - Netflix, DSTV, Spotify Prime</li>
+</ul>
+<a href="#" class="btn">Explore</a>
+</div>
+
+</div>
+
+<div class="payment-box">
+<h3 style="color:var(--gold);margin-top:0"><i class="fa-solid fa-cash-register"></i> DUAL PAYMENT SYSTEM</h3>
+<p style="color:#bbb">Pay anyhow you want - We receive both countries instantly.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+<div style="background:#000;padding:15px;border-radius:12px">
+<strong style="color:var(--gold)">NIGERIA PAYMENTS 🇳🇬</strong><br>
+<small style="color:#aaa">Paystack, Flutterwave, Bank Transfer, OPAY, Palmpay, Roqqu USDT</small><br><br>
+<button class="btn" onclick="alert('Paystack checkout NGN')"><i class="fa-solid fa-naira-sign"></i> Pay with Paystack</button>
+<button class="btn btn-outline">Flutterwave</button>
+</div>
+<div style="background:#000;padding:15px;border-radius:12px">
+<strong style="color:var(--gold)">USA PAYMENTS 🇺🇸</strong><br>
+<small style="color:#aaa">Stripe, PayPal, Chase Debit, Zelle, Cash App, Apple Pay</small><br><br>
+<button class="btn" style="background:#635bff;color:#fff" onclick="alert('Stripe checkout USD')"><i class="fa-brands fa-cc-stripe"></i> Pay with Stripe (Chase Card OK)</button>
+<button class="btn btn-outline" style="border-color:#0070ba;color:#0070ba">PayPal</button>
+</div>
+</div>
+</div>
+
+<footer>
+<p><strong style="color:var(--gold)">LUXURIES SHOP</strong> - Shop For Everything</p>
+<p>📍 Port Harcourt | Lagos | Abuja | Houston, TX, USA</p>
+<p>WhatsApp: +234 | Email: hello@jagmart.luxury | Live Support 24/7</p>
+<p>© 2026 - All Rights Reserved | Secure Payments by Paystack & Stripe</p>
+</footer>
+
+<script>
+// Simple demo functions
+function addToCart(item){alert(item + ' added to cart!')}
+</script>
+</body>
+</html>

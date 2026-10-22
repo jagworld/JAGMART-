@@ -36,8 +36,107 @@ nav a{color:#000;text-decoration:none;font-weight:700;background:#fff;padding:7p
 @keyframes blink{50%{opacity:0.5}}
 footer{text-align:center;padding:30px;background:#000;color:#777;font-size:13px}
 </style>
-</head>
+</head><!-- JAGMART SMART COOKIES - CART + WHATSAPP + RECENTLY VIEWED -->
+<script>
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + (days*24*60*60*1000));
+  document.cookie = name + "=" + encodeURIComponent(value) + ";expires=" + d.toUTCString() + ";path=/";
+}
+function getCookie(name) {
+  let cname = name + "=";
+  let ca = decodeURIComponent(document.cookie).split(';');
+  for(let i=0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
+  }
+  return "";
+}
+
+// 1. CART - Save when they click any Buy button
+function saveToCart(productName, price){
+  let cart = getCookie("jagmart_cart");
+  let items = cart ? JSON.parse(cart) : [];
+  items.push({name: productName, price: price, time: new Date().toISOString()});
+  setCookie("jagmart_cart", JSON.stringify(items), 7);
+  alert(productName + " added to cart! 🛒");
+}
+
+// 2. WHATSAPP - Remember number
+function saveWhatsApp(){
+  let phoneInput = document.querySelector('input[type="tel"], input[name="phone"], input[placeholder*="WhatsApp"]');
+  if(phoneInput && phoneInput.value){
+    setCookie("jagmart_whatsapp", phoneInput.value, 90);
+  }
+}
+function loadWhatsApp(){
+  let saved = getCookie("jagmart_whatsapp");
+  if(saved){
+    let phoneInput = document.querySelector('input[type="tel"], input[name="phone"], input[placeholder*="WhatsApp"]');
+    if(phoneInput) phoneInput.value = saved;
+  }
+}
+
+// 3. RECENTLY VIEWED - Track product
+function trackView(productName){
+  let viewed = getCookie("jagmart_viewed");
+  let list = viewed ? JSON.parse(viewed) : [];
+  // remove if already exists
+  list = list.filter(item => item !== productName);
+  list.unshift(productName); // add to front
+  list = list.slice(0, 5); // keep only last 5
+  setCookie("jagmart_viewed", JSON.stringify(list), 30);
+}
+
+// AUTO-RUN on page load
+window.addEventListener('load', () => {
+  loadWhatsApp();
+  // Example: track current page product automatically
+  let productTitle = document.querySelector('h1, h2, h3')?.innerText;
+  if(productTitle) trackView(productTitle);
+});
+
+// Show Recently Viewed section if exists
+function showRecentlyViewed(){
+  let viewed = getCookie("jagmart_viewed");
+  if(viewed){
+    let list = JSON.parse(viewed);
+    console.log("Recently Viewed:", list);
+    // You can display this in a div with id="recentlyViewed"
+    let div = document.getElementById("recentlyViewed");
+    if(div) div.innerHTML = "<h4>Recently Viewed</h4><p>" + list.join(", ") + "</p>";
+  }
+}
+</script>
+
+<!-- BANNER -->
+<div id="cookieBanner" style="position:fixed; bottom:0; left:0; right:0; background:#111; color:#fff; padding:16px; text-align:center; z-index:9999; display:none; font-family:sans-serif;">
+  JAGMART uses cookies to remember your cart & improve shopping. 
+  <button onclick="acceptCookies()" style="background:#8B5A2B; color:white; border:none; padding:8px 16px; border-radius:6px; margin-left:10px; cursor:pointer;">Accept</button>
+</div>
+<script>
+function acceptCookies(){
+  setCookie("jagmart_cookies_accepted", "yes", 365);
+  document.getElementById("cookieBanner").style.display="none";
+}
+if(getCookie("jagmart_cookies_accepted") == ""){
+  document.getElementById("cookieBanner").style.display="block";
+}
+</script>
 <body>
+<div id="cookieBanner" style="position:fixed; bottom:0; left:0; right:0; background:#111; color:#fff; padding:16px; text-align:center; z-index:9999; display:none; font-family:sans-serif;">
+  JAGMART uses cookies to remember your cart & improve shopping. 
+  <button onclick="acceptCookies()" style="background:#8B5A2B; color:white; border:none; padding:8px 16px; border-radius:6px; margin-left:10px; cursor:pointer;">Accept</button>
+</div>
+<script>
+function acceptCookies(){
+  setCookie("jagmart_cookies_accepted", "yes", 365);
+  document.getElementById("cookieBanner").style.display="none";
+}
+if(getCookie("jagmart_cookies_accepted") == ""){
+  document.getElementById("cookieBanner").style.display="block";
+}
+</script>
 
 <header>
 <div class="logo">
